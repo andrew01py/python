@@ -1,0 +1,14 @@
+# Basic statistics
+print("\nDescriptive Statistics:")
+print(df.describe())
+
+# Group by species and compute mean
+grouped = df.groupby('species').mean(numeric_only=True)
+print("\nMean of numerical columns grouped by species:")
+print(grouped)
+
+# Pattern identification (example)
+print("\nInteresting Observation:")
+for column in ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']:
+    max_species = grouped[column].idxmax()
+    print(f"{max_species} has the highest average {column}.")
