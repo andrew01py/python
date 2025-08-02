@@ -1,0 +1,19 @@
+# pandas 
+
+
+# Load the Iris dataset from seaborn (it has a built-in copy)
+df = sns.load_dataset('iris')  # Alternatively, use pd.read_csv('yourfile.csv')
+
+# Display first few rows
+print("First 5 rows of the dataset:")
+print(df.head())
+
+# Check data types and missing values
+print("\nData Types:")
+print(df.dtypes)
+
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+# Clean dataset - drop or fill missing values
+df = df.dropna()  # No missing values in iris, but this is the general approach
